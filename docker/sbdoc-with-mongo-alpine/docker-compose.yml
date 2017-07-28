@@ -3,6 +3,6 @@ services:
   sbdoc:
     image: lw96/doclever
     restart: always
-    container_name: "sbdoc"
+    container_name: "DOClever"
     ports:
-      - 15010:15010
+      - 10000:10000

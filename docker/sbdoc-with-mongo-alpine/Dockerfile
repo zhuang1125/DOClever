@@ -15,6 +15,6 @@ RUN git clone https://github.com/sx1989827/DOClever.git /root/DOClever
 RUN mkdir -p /data/db
 
 COPY supervisord.conf /etc/supervisor.d/supervisord.ini
-EXPOSE 15010
+EXPOSE 10000
 
 ENTRYPOINT "/usr/bin/supervisord"
