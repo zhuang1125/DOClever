@@ -10,7 +10,7 @@ RUN apk update && apk upgrade \
 
 RUN mkdir -p /var/log/supervisor
 
-RUN git clone https://github.com/sx1989827/SBDoc.git /root/SBDoc
+RUN git clone https://github.com/sx1989827/DOClever.git /root/DOClever
 
 RUN mkdir -p /data/db
 
