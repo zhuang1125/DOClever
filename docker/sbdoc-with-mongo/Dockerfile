@@ -1,8 +1,12 @@
 FROM node:boron
 MAINTAINER liwei liwei@wayearn.com
 
+RUN mv /etc/apt/sources.list /etc/apt/sources.list.bak
+
+COPY ./sources.list /etc/apt/
+
 RUN apt-get update \
-  && apt-get install -yqq supervisor mongodb \
+  && apt-get install -yqq supervisor mongodb 
 
 RUN mkdir -p /var/log/supervisor
 
