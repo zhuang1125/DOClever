@@ -1,12 +1,17 @@
 FROM node:boron
 MAINTAINER liwei liwei@wayearn.com
 
+# only for Chinese Developers
+
 # RUN mv /etc/apt/sources.list /etc/apt/sources.list.bak
 
 # COPY ./sources.list /etc/apt/
 
-# RUN apt-get update \
-#   && apt-get install -yqq supervisor mongodb 
+# RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys C0B21F32 \
+#   && apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 437D05B5
+
+RUN apt-get update \
+  && apt-get install -yqq supervisor mongodb 
 
 RUN mkdir -p /var/log/supervisor
 
@@ -19,4 +24,6 @@ EXPOSE 10000
 
 COPY ./entrypoint.sh /
 
-ENTRYPOINT [/entrypoint.sh]
+RUN chmod +x entrypoint.sh
+
+ENTRYPOINT ["/entrypoint.sh"]
