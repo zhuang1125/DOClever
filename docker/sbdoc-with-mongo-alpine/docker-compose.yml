@@ -1,8 +1,8 @@
 version: "2"
 services:
   sbdoc:
-    image: sx1989827/sbdoc-alpine
-    build: "."
+    image: lw96/doclever
+    restart: always
     container_name: "sbdoc"
     ports:
-      - 10000:10000
+      - 15010:15010
