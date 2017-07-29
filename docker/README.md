@@ -1,21 +1,41 @@
 SBDoc Docker 镜像
 ===
 
-自带mongodb镜像-debian
+构建镜像
 ---
 
-参见：[sbdoc-with-mongo/README.md](./sbdoc-with-mongo/README.md)
+使用docker命令构建
 
-此版本使用alpine，构建后镜像为 1 GB。
+```
+docker build -t sx1989827/sbdoc .
+```
 
-自带mongodb镜像-alpine
+启动容器
 ---
 
-参见：[sbdoc-with-mongo-alpine/README.md](./sbdoc-with-mongo-alpine/README.md)
+```
+docker run -d --name sbdoc -p 10000:10000 sx1989827/sbdoc
+```
 
-此版本使用alpine，构建后镜像为 340 MB。
+稍等片刻，系统需要加载配置。
 
-无mongodb镜像
+```
+http://127.0.0.1:10000/
+```
+
+docker-compose用户
 ---
 
-come soon...
+如果你安装了docker-compose：
+
+### 构建镜像
+
+```
+docker-compose build
+```
+
+### 启动容器
+
+```
+docker-compose up -d
+```
