@@ -3,12 +3,12 @@ MAINTAINER liwei liwei@wayearn.com
 
 # only for Chinese Developers
 
-# RUN mv /etc/apt/sources.list /etc/apt/sources.list.bak
+RUN mv /etc/apt/sources.list /etc/apt/sources.list.bak
 
-# COPY ./sources.list /etc/apt/
+COPY ./sources.list /etc/apt/
 
-# RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys C0B21F32 \
-#   && apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 437D05B5
+RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys C0B21F32 \
+  && apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 437D05B5
 
 RUN apt-get update \
   && apt-get install -yqq supervisor mongodb 
