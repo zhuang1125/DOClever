@@ -17,4 +17,8 @@ RUN mkdir -p /data/db
 COPY supervisord.conf /etc/supervisor.d/supervisord.ini
 EXPOSE 10000
 
-ENTRYPOINT "/usr/bin/supervisord"
+COPY ./entrypoint.sh /
+
+RUN chmod +x entrypoint.sh
+
+ENTRYPOINT ["/entrypoint.sh"]

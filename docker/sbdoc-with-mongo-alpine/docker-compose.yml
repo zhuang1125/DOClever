@@ -1,8 +1,8 @@
 version: "2"
 services:
-  sbdoc:
-    image: lw96/doclever
+  doclever:
+    image: lw96/doclever-alpine
     restart: always
     container_name: "DOClever"
     ports:
-      - 10000:10000
+    - 10000:10000
