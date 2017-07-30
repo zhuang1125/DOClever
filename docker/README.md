@@ -1,5 +1,6 @@
 # DOClever Docker 镜像
-===
+---
+
 
 ## 安装docker
 ---
@@ -35,6 +36,7 @@ docker run -d --name doclever -p 10000:10000 lw96/doclever
 ```
 http://127.0.0.1:10000/
 ```
+
 
 ## 使用自动化docker-compose
 ---
