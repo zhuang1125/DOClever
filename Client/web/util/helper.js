@@ -110,7 +110,7 @@ helper.eachResult=function (item,pItem,arr,json) {
                             bFind=true;
                         }
                     })
-                    if(!bFind)
+                    if(!bFind && v)
                     {
                         item.value.data.push({
                             value:v,
@@ -118,6 +118,7 @@ helper.eachResult=function (item,pItem,arr,json) {
                         });
                     }
                 }
+                obj.value=$.clone(item.value);
             }
             else
             {
@@ -2113,7 +2114,7 @@ helper.runTestCode=async function (code,test,global,opt,root) {
         var text;
         if(type=="1")
         {
-            text="(function (opt) {return helper.runTest("+obj+",'"+opt.baseUrl+"',"+"{before:'"+opt.before+"',after:'"+opt.after+"'}"+",test,root,opt)})"
+            text="(function (opt) {return helper.runTest("+obj.replace(/\r|\n/g,"")+",'"+opt.baseUrl+"',"+"{before:'"+opt.before.replace(/'/g,"\\'").replace(/\r|\n/g,";")+"',after:'"+opt.after.replace(/'/g,"\\'").replace(/\r|\n/g,";")+"'}"+",test,root,opt)})"
         }
         else if(type=="2")
         {
